@@ -2,9 +2,8 @@ name: galpha-agent
 version: 0.1.0
 language: th
 description: |
-  เอเจนต์ช่วยวิเคราะห์และตรวจสอบข้อมูล GeoJSON/Field Data สำหรับงาน OSINT และนิเวศวิทยาไทย
-  ทำ validate validate 
-  
+  เอเจนต์ช่วยวิเคราะห์ข้อมูล GeoJSON สำหรับงาน OSINT และนิเวศวิทยาไทย
+  รองรับ validate, enrich (Mapbox, GBIF), mask (jitter/generalize)
 secrets:
   - MAPBOX_TOKEN
   - GBIF_TOKEN
@@ -13,7 +12,7 @@ tools:
   - name: process_geojson
     type: python
     entry_point: agents/galpha_agent_tools.py:process_geojson
-    description: "Pipeline: validate, enrich (mapbox/gbif), mask (jitter/generalize) และสรุปผล"
+    description: "orchestrates validate, enrich, mask และส่งคืน summary, geojson, anomalies, map_actions"
 output_schema:
   type: object
   properties:
