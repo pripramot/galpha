@@ -5,5 +5,7 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
-samples/*.geojson
+*.csv
+*.geojson
+!samples/*.geojson
 outputs/
